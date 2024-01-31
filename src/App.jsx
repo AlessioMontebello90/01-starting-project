@@ -3,6 +3,10 @@ import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
+function handlSelect(){
+  console.log('Hello World -  selected!');
+}
+
 
 function App() {
   return (
@@ -22,15 +26,16 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS [3]} />
           
         </ul>
+        </section>
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
-          <TabButton>Components</TabButton>
-          <TabButton>JSX</TabButton>
-          <TabButton>Props</TabButton>
-          <TabButton>State</TabButton>
-          </menu>
-        </section>
+           <TabButton onSelect={handlSelect}>Components</TabButton>
+           <TabButton onSelect={handlSelect}>JSX</TabButton>
+           <TabButton onSelect={handlSelect}>Props</TabButton>
+           <TabButton onSelect={handlSelect}>State</TabButton>
+           </menu>
+           Dynamic Content
         </section>
       </main>
     </div>
