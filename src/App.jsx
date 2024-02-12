@@ -3,12 +3,15 @@ import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
-function handlSelect(){
-  console.log('Hello World -  selected!');
-}
 
 
 function App() {
+  let tabContent = 'Please click a button';
+  function handlSelect(selectedButton){
+    // selectedButton => 'components', 'jsx', 'props', 'state'
+    tabContent = selectedButton;
+  }
+  console.log('APP COMPONENT EXECUTING');
   return (
     <div>
       <Header />
@@ -30,12 +33,12 @@ function App() {
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
-           <TabButton onSelect={handlSelect}>Components</TabButton>
-           <TabButton onSelect={handlSelect}>JSX</TabButton>
-           <TabButton onSelect={handlSelect}>Props</TabButton>
-           <TabButton onSelect={handlSelect}>State</TabButton>
+           <TabButton onSelect={() => handlSelect('components')}>Components</TabButton>
+           <TabButton onSelect={() => handlSelect('jsx')}>JSX</TabButton>
+           <TabButton onSelect={() => handlSelect('props')}>Props</TabButton>
+           <TabButton onSelect={() => handlSelect('state')}>State</TabButton>
            </menu>
-           Dynamic Content
+           {tabContent}
         </section>
       </main>
     </div>
