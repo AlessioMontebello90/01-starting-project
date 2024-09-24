@@ -1,4 +1,4 @@
-export default 
+export default CoreConcept
 
 function CoreConcept({ image, title, description }) {
     return ( 
